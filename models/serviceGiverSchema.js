@@ -19,4 +19,4 @@ const serviceGiverSchema = new Schema({
 
 const model = mongoose.model('serviceGiver', serviceGiverSchema)
 
-module.exports = model
+module.exports = model;
