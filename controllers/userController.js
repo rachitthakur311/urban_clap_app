@@ -69,9 +69,34 @@ const userLogin = (res, req)=>{
         })
     })
     .catch(err=>{
-        res.status(500).json
-        error: err
+        res.status(500).json({
+            error: err
+        })
     })
 }
 
+const getUserProfile = (req,res,next)=>{
+    const _id = req.params.id;
+    users.findById(_id)
+    .exe()
+    .then(result=>{
+        res.status(200).json({
+            Data:result
+        })
+    })
+   .catch(err=>{
+    console.log(err)
+    res.status(500).json({
+        error:err
+    })
+   })
+}
 
+const userChangePassword = async(req,res)=>{
+console.log('change password');
+try{
+    
+}
+}
+
+module.exports ={userRegister, userLogin, getUserProfile }
