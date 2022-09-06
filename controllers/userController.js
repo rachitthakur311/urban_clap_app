@@ -151,7 +151,7 @@ const countryCode = (req,res)=>{
     })
 }
 
-getCountry = (req, res)=>{
+const getCountry = (req, res)=>{
     country.find()
     .then(result=>{
         res.status(200).json({
@@ -165,8 +165,42 @@ getCountry = (req, res)=>{
     })
 }
 
-updateCountry = (req, res)=>{
-    
+const updateCountry = (req, res)=>{
+    country.findOneAndUpdate({_id: req.params.id},{
+        $set:{
+            name: req.body.name,
+            dail_code: req.body.dail_code,
+            code: req.body.code,
+            
+        }
+    }) 
+    .then(result =>{
+        res.status(200).json({
+            Updated_slider:result
+        })
+    })
+    .catch(err =>{
+        console.log(err)
+        res.status(500).json({
+            error:err
+        })
+    })
+}
+
+const deleteCountry = (req,res)=>{
+    country.remove({_id: req.params.id})
+    .then(result =>{
+        res.status(200).json({
+            message: "slider Delete",
+            Delete_Slider: result
+        })
+    })
+    .catch(err =>{
+        console.log(err)
+        res.status(500).json({
+            error: err
+        })
+    })
 }
 
 
@@ -175,4 +209,4 @@ updateCountry = (req, res)=>{
 
 
 
-module.exports ={userRegister, userLogin, getUserProfile, userChangePassword, getCountry}
+module.exports ={userRegister, userLogin, getUserProfile, userChangePassword, getCountry, updateCountry, deleteCountry}
