@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const cors = require('cors');
 const app = express();
+const userRoutes = require('./routes/userRoutes');
 
 
 const mongoUrl = "mongodb://localhost:27017"
@@ -21,6 +22,8 @@ mongoose.connect(mongoUrl, mongoOptions)
     console.log(err)
 })
 
+
+app.use('/api/app', userRoutes);
 
 
 app.listen(3000,()=>{

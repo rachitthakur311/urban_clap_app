@@ -208,5 +208,4 @@ const deleteCountry = (req,res)=>{
 
 
 
-
 module.exports ={userRegister, userLogin, getUserProfile, userChangePassword, getCountry, updateCountry, deleteCountry}
