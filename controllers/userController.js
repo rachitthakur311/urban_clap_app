@@ -111,7 +111,7 @@ try{
 }
 }
 
-const addQuote = (req, res)=>{
+const addToQuote = (req, res)=>{
     const quote = new addQuote({
         name: req.body.name,
         emil: req.body.email,

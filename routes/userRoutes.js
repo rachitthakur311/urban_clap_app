@@ -9,13 +9,13 @@ const serviceRequestController = require('../controllers/serviceRequestControlle
 
 
 
-router.post('/registration',userController.userRegister)
-router.post('/login',userController.userLogin)
+router.post('/registration', userController.userRegister)
+router.post('/login', userController.userLogin)
 router.get('/profile/:id', userController.getUserProfile)
 router.get('/Change-Password/:userId', userController.userChangePassword)
-router.post('/useraddQuote',userController.addQuote)
-router.post('/addCcountryCode',userController.countryCode)
-router.get('/getCountryCodes',userController.getCountry)
+router.post('/useraddQuote', userController.addToQuote)
+router.post('/addCcountryCode', userController.countryCode)
+router.get('/getCountryCodes', userController.getCountry)
 router.put('/updateCountryCode/:id', userController.updateCountry)
 router.delete('/deleteCountry/:id', userController.deleteCountry)
 

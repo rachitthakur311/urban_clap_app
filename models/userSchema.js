@@ -15,3 +15,5 @@ const customerSchema = new Schema({
 const model = mongoose.model('user', customerSchema)
 
 module.exports = model;
+
+

@@ -74,3 +74,6 @@ const getAllServiceRequest = (req,res)=>{
         })
     })
 }
+
+
+module.exports = {addServiceRequest, updateServiceReqest, deleteServiceRequest, getAllServiceRequest}
