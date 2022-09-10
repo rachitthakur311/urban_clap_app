@@ -6,6 +6,7 @@ const router = express.Router();
 const userController = require('../controllers/userController')
 const serviceControllers  = require('../controllers/serviceControllers')
 const serviceRequestController = require('../controllers/serviceRequestController')
+const serviceProviderControllers = require('../controllers/serviceProviderControllers') 
 
 
 
@@ -30,3 +31,9 @@ router.put('/updateServiceReqest/:id',serviceRequestController.updateServiceReqe
 router.get('/ getAllServiceRequest', serviceRequestController. getAllServiceRequest)
 router.delete('/deleteServiceRequest/:id', serviceRequestController.deleteServiceRequest)
 
+
+
+router.post('/addServiceProvider', serviceProviderControllers.addServiceProvider);
+router.put('/updateServiceProvider/:id', serviceProviderControllers.updateServiceProvider);
+router.delete('/deleteServiceProvider/:id', serviceProviderControllers.deleteServiceProvider)
+router.get('/getServiceProvider', serviceProviderControllers.getServiceProvider)

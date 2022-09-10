@@ -1,6 +1,6 @@
 const { Certificate } = require('crypto');
 const express = require('express');
-const serviceProvider = require('../controllers/serviceProviderSchema');
+const serviceProvider = require('./serviceProviderControllers');
 
 
 const addServiceProvider = (req,res)=>{
