@@ -7,6 +7,7 @@ const userController = require('../controllers/userController')
 const serviceControllers  = require('../controllers/serviceControllers')
 const serviceRequestController = require('../controllers/serviceRequestController')
 const serviceProviderControllers = require('../controllers/serviceProviderControllers') 
+const serviceGiverControllers = require('../controllers/serviceGiverControllers')
 
 
 
@@ -37,3 +38,10 @@ router.post('/addServiceProvider', serviceProviderControllers.addServiceProvider
 router.put('/updateServiceProvider/:id', serviceProviderControllers.updateServiceProvider);
 router.delete('/deleteServiceProvider/:id', serviceProviderControllers.deleteServiceProvider)
 router.get('/getServiceProvider', serviceProviderControllers.getServiceProvider)
+
+
+
+router.post('/addServiceGiver', serviceGiverControllers.addServiceGiver)
+router.put('/updateServiceGiver', serviceGiverControllers.updateServiceGiver)
+router.delete('/deleteServiceGiver', serviceGiverControllers.deleteServiceGiver)
+router.get('/getAllServieGiver', serviceGiverControllers.getAllServiceGiver)
