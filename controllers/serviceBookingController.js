@@ -48,7 +48,7 @@ const updateServiceStatus = (req, res) =>{
             Location: req.body.Location,
             Address: req.body.Address,
             PackageId: req.body.PackageId,
-            ServiceProderId: req.body.ServiceProderId,
+            ServiceProviderId: req.body.ServiceProviderId,
             startOtp: req.body.startOtp,
             EndOtp: req.body.EndOtp,
             status: req.body.status
@@ -65,6 +65,60 @@ const updateServiceStatus = (req, res) =>{
             error: err
         })
     })
+}
+
+
+const getByServiceProvider = (req, res) =>{
+    console.log(req.query)
+    const serviceProviderId = req.query.ServiceProviderId;
+    serviceBook.find({ServiceProviderId: req.query.ServiceProviderId})
+    .then(result =>{
+        console.log(result)
+        res.status(200).json({
+            Data: result
+        })
+    })
+    .catch(err =>{
+        res.status(500).json({
+            error: err
+        })
+    })
+}
+
+
+const getByPackageId = (req, res) => {
+    console.log(req.query)
+    const PackageId = req.query.PackageId
+    serviceBook.find({PackageId: req.query.PackageId})
+    .then(result =>{
+        console.log(result)
+        res.status(200).json({
+           Data: result
+        })
+    })
+    .catch(err =>{
+        res.status(500).json({
+            error: err
+        })
+    })
+}
+
+
+const getByServiceIds = (req,res)=>{
+    console.log(req.query)
+    const ServiceId = req.query.ServiceId;
+    serviceBook.find({ServiceId: req.query.ServiceId})
+        .then(result =>{
+            console.log(result)
+            res.status(200).json({
+                Data: result
+            })
+        })
+        .catch(err =>{
+            res.status(500).json({
+                error: err
+            })
+        })
 }
 
 
