@@ -8,7 +8,7 @@ const serviceControllers  = require('../controllers/serviceControllers')
 const serviceRequestController = require('../controllers/serviceRequestController')
 const serviceProviderControllers = require('../controllers/serviceProviderControllers') 
 const serviceGiverControllers = require('../controllers/serviceGiverControllers')
-
+const serviceBookingcontrollers = require('../models/serviceBookingSchema')
 
 
 router.post('/registration', userController.userRegister)
@@ -45,3 +45,13 @@ router.post('/addServiceGiver', serviceGiverControllers.addServiceGiver)
 router.put('/updateServiceGiver', serviceGiverControllers.updateServiceGiver)
 router.delete('/deleteServiceGiver', serviceGiverControllers.deleteServiceGiver)
 router.get('/getAllServieGiver', serviceGiverControllers.getAllServiceGiver)
+
+
+
+router.post('/BookService', serviceBookingcontrollers.BookService)
+router.put ('/updateServiceStatus/:id', serviceBookingcontrollers.updateServiceStatus)
+router.get('/getByServiceId', serviceBookingcontrollers.getByServiceProvider)
+router.get('/getByPackageId', serviceBookingcontrollers.getByPackageId)
+router.get('/ getByServiceIds', serviceBookingcontrollers. getByServiceIds)
+
+
